@@ -1,0 +1,26 @@
+{
+  "name": "mdidius-front2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morphydidius/frontend-project-lvl2.git"
+  },
+  "author": "mdidius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morphydidius/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/morphydidius/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^6.1.0"
+  }
+}
