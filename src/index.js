@@ -17,20 +17,21 @@ export default () => {
           keys.push(key);
         }
       });
-      console.log('{');
-      keys.forEach((key) => {
+      const diff = keys.reduce((acc, key) => {
         if (!_.has(file1, key)) {
-          console.log(`  + ${key}: ${file2[key]}`);
-        } else if (!_.has(file2, key)) {
-          console.log(`  - ${key}: ${file1[key]}`);
-        } else if (file1[key] === file2[key]) {
-          console.log(`    ${key}: ${file1[key]}`);
-        } else {
-          console.log(`  - ${key}: ${file1[key]}`);
-          console.log(`  + ${key}: ${file2[key]}`);
+          return `${acc}\n  + ${key}: ${file2[key]}`;
         }
-      });
-      console.log('}');
+        if (!_.has(file2, key)) {
+          return `${acc}\n  - ${key}: ${file1[key]}`;
+        }
+        if (file1[key] === file2[key]) {
+          return `${acc}\n    ${key}: ${file1[key]}`;
+        }
+        return `${acc}\n  - ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`;
+      }, '');
+      const result = `{${diff}\n}`;
+      console.log(result);
+      return result;
     });
   program.parse(process.argv);
 };
