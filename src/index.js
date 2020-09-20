@@ -4,6 +4,7 @@ import path from 'path';
 import _ from 'lodash';
 
 export default () => {
+  let result = '';
   program
     .version('-V, --version')
     .description('Compares two configuration files and shows a difference.')
@@ -29,9 +30,8 @@ export default () => {
         }
         return `${acc}\n  - ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`;
       }, '');
-      const result = `{${diff}\n}`;
-      console.log(result);
-      return result;
+      result = `{${diff}\n}`;
     });
   program.parse(process.argv);
+  return result;
 };
