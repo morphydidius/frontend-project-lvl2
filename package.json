@@ -2,13 +2,17 @@
   "name": "mdidius-front2",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "npx -n --experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
@@ -25,9 +29,11 @@
     "lodash": "^4.17.20"
   },
   "devDependencies": {
+    "@jest/globals": "^26.4.2",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2"
   }
 }
