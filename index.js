@@ -24,6 +24,6 @@ export default (filepath1, filepath2) => {
     }
     return `${acc}\n  - ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`;
   }, '');
-  const result = `{${diff}\n}`;
+  const result = `{${diff}\n}\n`;
   return result;
 };

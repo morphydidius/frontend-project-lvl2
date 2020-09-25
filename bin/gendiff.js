@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 import program from 'commander';
 import gendiff from '../index.js';
-import fs from 'fs';
-import path from 'path';
 
 program
   .version('-V, --version')
@@ -11,6 +9,6 @@ program
   .arguments('<filepath1> <filepath2>')
   .action((file1, file2) => {
     const result = gendiff(file1, file2);
-    console.log('gendiff', result);
+    console.log(result);
   });
 program.parse(process.argv);
