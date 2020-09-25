@@ -10,7 +10,6 @@ const __dirname = path.dirname(__filename);
 const result = gendiff(path.join(__dirname, '..', '__fixtures__', 'file1.json'), path.join(__dirname, '..', '__fixtures__', 'file2.json'));
 const answer = fs.readFileSync(path.join(__dirname, '..', '__fixtures__', 'file1file2.txt'), 'utf8');
 
-
 test('compare', () => {
   expect(result).toBe(answer);
 });

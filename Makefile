@@ -4,7 +4,7 @@ publish:
 	npm publish --dry-run
 make test:
 	npm run test
-make test watch:
+make testwatch:
 	npx -n --experimental-vm-modules jest --watch
 make lint:
 	npx eslint .
