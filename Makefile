@@ -6,7 +6,7 @@ make test:
 	npm run test
 make testwatch:
 	npx -n --experimental-vm-modules jest --watch
-maketest-coverage:
+make test-coverage:
 	npm run test -- --coverage
 make lint:
 	npx eslint .
