@@ -2,11 +2,11 @@ install:
 	npm install
 publish:
 	npm publish --dry-run
-make test:
+test:
 	npm run test
-make testwatch:
+testwatch:
 	npx -n --experimental-vm-modules jest --watch
-make test-coverage:
+test-coverage:
 	npm run test -- --coverage
-make lint:
+lint:
 	npx eslint .
