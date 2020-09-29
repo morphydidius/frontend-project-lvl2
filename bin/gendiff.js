@@ -9,6 +9,6 @@ program
   .arguments('<filepath1> <filepath2>')
   .action((file1, file2) => {
     const result = gendiff(file1, file2);
-    console.log('result', result);
+    console.log(result);
   });
 program.parse(process.argv);
